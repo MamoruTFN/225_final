@@ -2,7 +2,7 @@
 
 int main()
 {
-    int a,b,d,k=0,count=0,check[3];
+    int a,b,d,k=0,count=0,check[3]={1};
     scanf("%d %d %d",&a,&b,&d);
     int a1[a][a],b1[b][b],d1[d][d];
     int r1[a],r2[b],r3[d];
@@ -37,7 +37,7 @@ int main()
     {
         di1[i]=0;
         di2[i]=0;
-        di2[i]=0;
+        di3[i]=0;
     }
 
     //find r,c,d
@@ -55,12 +55,14 @@ int main()
             {
                 di1[0]+=a1[i][j];
             }
-            else if((i+j)==(a-1))
+            if((i+j)==(a-1))
             {
                 di1[1]+=a1[i][j];
             }
         }
+
     }
+
     for(int i=0; i<b; i++)
     {
         r2[i]=0;
@@ -93,15 +95,16 @@ int main()
             {
                 di3[0]+=d1[i][j];
             }
-            else if((i+j)==(d-1))
+            if((i+j)==(a-1))
             {
                 di3[1]+=d1[i][j];
             }
         }
+
     }
 
     //check
-    for(int i=0;i<a;i++)
+    for(int i=0; i<a-1; i++)
     {
         if(r1[i]!=r1[i+1])
         {
@@ -111,12 +114,12 @@ int main()
         {
             check[0]=0;
         }
-        else if(di1[i]!=di1[i+1])
+        else if(di1[0]!=di1[1])
         {
             check[0]=0;
         }
     }
-    for(int i=0;i<b;i++)
+    for(int i=0; i<b-1; i++)
     {
         if(r2[i]!=r2[i+1])
         {
@@ -126,12 +129,12 @@ int main()
         {
             check[1]=0;
         }
-        else if(di2[i]!=di2[i+1])
+        else if(di2[0]!=di2[1])
         {
             check[1]=0;
         }
     }
-    for(int i=0;i<d;i++)
+    for(int i=0; i<d-1; i++)
     {
         if(r3[i]!=r3[i+1])
         {
@@ -141,13 +144,13 @@ int main()
         {
             check[2]=0;
         }
-        else if(di3[i]!=di3[i+1])
+        else if(di3[0]!=di3[1])
         {
             check[2]=0;
         }
     }
 
-    for(int i=0;i<3;i++)
+    for(int i=0; i<3; i++)
     {
         if(check[i]==0)
         {
