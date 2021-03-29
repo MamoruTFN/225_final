@@ -2,12 +2,12 @@
 
 int main()
 {
-    int a,b,d,k=0,count=0,check[3]={1};
+    int a,b,d,k=0,count=0,check[3]={1,1,1};
     scanf("%d %d %d",&a,&b,&d);
     int a1[a][a],b1[b][b],d1[d][d];
     int r1[a],r2[b],r3[d];
     int c1[a],c2[b],c3[d];
-    int di1[2],di2[2],di3[2];
+    int di1[2]={0},di2[2]={0},di3[2]={0};
 
     //scan
     for(int i=0; i<a; i++)
@@ -30,14 +30,6 @@ int main()
         {
             scanf("%d",&d1[i][j]);
         }
-    }
-
-    //set di 0
-    for(int i=0; i<2; i++)
-    {
-        di1[i]=0;
-        di2[i]=0;
-        di3[i]=0;
     }
 
     //find r,c,d
@@ -76,11 +68,12 @@ int main()
             {
                 di2[0]+=b1[i][j];
             }
-            else if((i+j)==(b-1))
+            if((i+j)==(b-1))
             {
                 di2[1]+=b1[i][j];
             }
         }
+
     }
     for(int i=0; i<d; i++)
     {
@@ -149,6 +142,7 @@ int main()
             check[2]=0;
         }
     }
+
 
     for(int i=0; i<3; i++)
     {
