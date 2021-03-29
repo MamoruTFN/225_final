@@ -7,7 +7,7 @@ int main()
     int a1[a][a],b1[b][b],d1[d][d];
     int r1[a],r2[b],r3[d];
     int c1[a],c2[b],c3[d];
-    int di1[2]={0},di2[2]={0},di3[2]={0};
+    int di1[2]={0,0},di2[2]={0,0},di3[2]={0,0};
 
     //scan
     for(int i=0; i<a; i++)
@@ -143,7 +143,7 @@ int main()
         }
     }
 
-
+    //print ans
     for(int i=0; i<3; i++)
     {
         if(check[i]==0)
